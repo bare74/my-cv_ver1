@@ -1,0 +1,79 @@
+{
+  "school": [
+    {
+      "id": 1,
+      "school": "Gokstad Akademiet",
+      "degree": "Frontend-Utvikling",
+      "date": " 2021 -DD"
+    },
+
+    {
+      "id": 2,
+      "school": "Yrkesskole og Tekniskfagskole Horten",
+      "degree": "VK 2 Elektronikkservice",
+      "date": "1992 – 1993"
+    },
+
+    {
+      "id": 3,
+      "school": "Maritime Videregående Skole Tønsberg",
+      "degree": "VK 1 Elektronikklinje",
+      "date": " 1991 – 1992"
+    }
+  ],
+  "course": [
+    {
+      "id": 1,
+      "course": "Universell Utforming for nettredaktører",
+      "year": " 2022"
+    },
+
+    {
+      "id": 2,
+      "course": "SuperOffice CRM Administratorkurs",
+      "year": "2018"
+    },
+
+    {
+      "id": 3,
+      "course": "Trener 1 Kurs Håndball",
+      "year": " 2012"
+    },
+    {
+      "id": 4,
+      "course": "Regnskapskurs Visma",
+      "year": " 2011/2012"
+    }
+  ],
+  "work": [
+    {
+      "id": 1,
+      "company": "AXA AS",
+      "title": "Eier/ Utleid som konsulent",
+      "text": "Ansvar for finansiell rådgivning, dokumentkontroll, fakturering og digital markedsføring.",
+      "year": " 2022"
+    },
+    {
+      "id": 2,
+      "company": "Ecofleet Norge AS / Fleet Complete Norge AS",
+      "title": "Regnskapsmedarbeider/Administrasjon",
+      "text": "Ansvar for løpende regnskapsførsel i selskapet, månedsrapport og årsoppgjør, lønnskjøring, rapporteringer, likviditetsstyring, analyser, forsikring og personal.",
+      "year": "Nov.2015 – Mai.2018"
+    },
+
+    {
+      "id": 3,
+      "company": "Arbeidssøker",
+      "title": "",
+      "text": "",
+      "year": "Sep.2015 - Nov.2015"
+    },
+    {
+      "id": 4,
+      "company": "CBA Vestfold AS",
+      "title": "Vikariat - Personalkonsulent.",
+      "text": "Ansvar for rekruttering, intervju, referanse sjekk, utarbeide jobbkrav og stillingsbeskrivelser, registrering av oppdrag og timelister, andre administrative oppgaver og nysalg.",
+      "year": "Sep.2014 – Sep.2015"
+    }
+  ]
+}

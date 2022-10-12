@@ -34,6 +34,17 @@ function JsonDataDisplay(props) {
   //   );
   // });
 
+  const DisplayWork = work.map((info) => {
+    return (
+      <tr>
+        <td>{info.company}</td>
+        <td>{info.title}</td>
+        <td>{info.text}</td>
+        <td>{info.year}</td>
+      </tr>
+    );
+  });
+
   const DisplaySchool = school.map((info) => {
     return (
       <tr>
@@ -53,80 +64,73 @@ function JsonDataDisplay(props) {
     );
   });
 
-  const DisplayWork = work.map((info) => {
-    return (
-      <tr>
-        <td>{info.company}</td>
-        <td>{info.title}</td>
-        <td>{info.text}</td>
-        <td>{info.year}</td>
-      </tr>
-    );
-  });
-
   return (
-    <div className="test">
+    <div>
       <table>
-        <thead className="box">
-          <tr>
-            <th>Firma</th>
-            <th>Title</th>
-            <th>Tekst</th>
-            <th>Dato</th>
-            <tbody>{DisplayWork}</tbody>
-          </tr>
-          <thead>
-            <tr>
-              <th>Skole</th>
-              <th>Utdanning</th>
-              <th>Dato</th>
-            </tr>
-          </thead>
-          <tbody>{DisplaySchool}</tbody>
-          <tr>
-            <th>Kurs</th>
-            <th>Dato</th>
-          </tr>
-          <tbody>{DisplayCourse}</tbody>
-        </thead>
-
-        {adminMode ? (
-          <>
-            <input
-              type={"text"}
-              placeholder="Skole"
-              value={schoolPlace}
-              onChange={(info) => setSchoolPlace(info.target.value)}
-            />
-            <input
-              type={"text"}
-              value={degree}
-              onChange={(info) => setDegree(info.target.value)}
-            />
-            <input
-              type={"month"}
-              value={date}
-              onChange={(info) => setDate(info.target.value)}
-            />
-            <button
-              onClick={() =>
-                setSchool((prevList) => [
-                  ...prevList,
-                  {
-                    school: schoolPlace,
-                    degree: degree,
-                    date: date,
-                  },
-                ])
-              }
-            >
-              Add name
-            </button>
-          </>
-        ) : (
-          <></>
-        )}
+        <tr>
+          <th>Firma</th>
+          <th>Title</th>
+          <th>Tekst</th>
+          <th>Dato</th>
+        </tr>
+        <tbody>{DisplayWork}</tbody>
       </table>
+      <hr />
+      <table>
+        <tr>
+          <th>Skole</th>
+          <th>Utdanning</th>
+          <th>Dato</th>
+        </tr>
+        <tbody>{DisplaySchool}</tbody>
+      </table>
+      <hr />
+      <table>
+        <tr>
+          <th>Kurs</th>
+          <th>Dato</th>
+        </tr>
+        <tbody>{DisplayCourse}</tbody>
+      </table>
+      <hr />
+
+      {adminMode ? (
+        <>
+          <input
+            type={"text"}
+            placeholder="Skole"
+            value={schoolPlace}
+            onChange={(info) => setSchoolPlace(info.target.value)}
+          />
+          <input
+            type={"text"}
+            placeholder="Utdanning"
+            value={degree}
+            onChange={(info) => setDegree(info.target.value)}
+          />
+          <input
+            type={"month"}
+            value={date}
+            onChange={(info) => setDate(info.target.value)}
+          />
+          <button
+            onClick={() =>
+              setSchool((prevList) => [
+                ...prevList,
+                {
+                  school: schoolPlace,
+                  degree: degree,
+                  date: date,
+                },
+              ])
+            }
+          >
+            Add name
+          </button>
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 }

@@ -1,49 +1,13 @@
-// import React, { useEffect } from "react";
-import "./TableList.css";
 import JsonData from "../data.json";
 import { useState } from "react";
+import PrimaryButton from "./common/PrimaryButton";
 
-// npm install json-server
-//json-server --watch ./src/data.json
-
-function JsonDataDisplay(props) {
+function SchoolDataDisplay(props) {
   const { adminMode } = props;
   const [school, setSchool] = useState(JsonData.school);
-  const [course, setCourse] = useState(JsonData.course);
-  const [work, setWork] = useState(JsonData.work);
-
-  console.log(JSON.stringify(setCourse));
-  console.log(JSON.stringify(setWork));
-
   const [schoolPlace, setSchoolPlace] = useState();
   const [degree, setDegree] = useState();
   const [date, setDate] = useState();
-
-  console.log(school);
-  console.log(schoolPlace);
-  console.log(degree);
-  console.log(date);
-
-  // useEffect(() => {
-  //   fs.writeFile(
-  //     path,
-  //     JSON.stringify(namesList, namesList1, namesList2),
-  //     (err) => {
-  //       if (err) console.log("Error writing file:", err);
-  //     }
-  //   );
-  // });
-
-  const DisplayWork = work.map((info) => {
-    return (
-      <tr>
-        <td>{info.company}</td>
-        <td>{info.title}</td>
-        <td>{info.text}</td>
-        <td>{info.year}</td>
-      </tr>
-    );
-  });
 
   const DisplaySchool = school.map((info) => {
     return (
@@ -55,27 +19,8 @@ function JsonDataDisplay(props) {
     );
   });
 
-  const DisplayCourse = course.map((info) => {
-    return (
-      <tr>
-        <td>{info.course}</td>
-        <td>{info.year}</td>
-      </tr>
-    );
-  });
-
   return (
     <div>
-      <table>
-        <tr>
-          <th>Firma</th>
-          <th>Title</th>
-          <th>Tekst</th>
-          <th>Dato</th>
-        </tr>
-        <tbody>{DisplayWork}</tbody>
-      </table>
-      <hr />
       <table>
         <tr>
           <th>Skole</th>
@@ -84,16 +29,6 @@ function JsonDataDisplay(props) {
         </tr>
         <tbody>{DisplaySchool}</tbody>
       </table>
-      <hr />
-      <table>
-        <tr>
-          <th>Kurs</th>
-          <th>Dato</th>
-        </tr>
-        <tbody>{DisplayCourse}</tbody>
-      </table>
-      <hr />
-
       {adminMode ? (
         <>
           <input
@@ -113,7 +48,9 @@ function JsonDataDisplay(props) {
             value={date}
             onChange={(info) => setDate(info.target.value)}
           />
-          <button
+          <PrimaryButton
+            disableBtn={false}
+            text={"Legg til skole"}
             onClick={() =>
               setSchool((prevList) => [
                 ...prevList,
@@ -124,9 +61,7 @@ function JsonDataDisplay(props) {
                 },
               ])
             }
-          >
-            Add name
-          </button>
+          />
         </>
       ) : (
         <></>
@@ -135,4 +70,4 @@ function JsonDataDisplay(props) {
   );
 }
 
-export default JsonDataDisplay;
+export default SchoolDataDisplay;

@@ -1,12 +1,9 @@
 import "./App.css";
-
 import { useState } from "react";
-
-import Counter from "./components/Counter";
-import NameList from "./components/Namelist";
-import JsonDataDisplay from "./components/TableList";
+import WorkDataDisplay from "./components/Work";
+import CourseDataDisplay from "./components/Course";
+import SchoolDataDisplay from "./components/School";
 // import Printer, { print } from "react-pdf-print";
-
 // const ids = ["1"];
 
 const App = () => {
@@ -17,18 +14,9 @@ const App = () => {
       {/* <Printer> */}
       <button onClick={() => setAdminMode(!adminMode)}>Hidden</button>
       {/* <div id={ids[0]} style={{ width: "210mm", height: "297mm" }}> */}
-      <Counter />
-      <br />
-      <hr />
-      <NameList adminMode={adminMode} />
-      <br />
-      <hr />
-      <br />
-      <JsonDataDisplay adminMode={adminMode} />
-      <br />
-      <br />
-      <br />
-      <br />
+      <WorkDataDisplay adminMode={adminMode} />
+      <SchoolDataDisplay adminMode={adminMode} />
+      <CourseDataDisplay adminMode={adminMode} />
     </div>
     // </Printer>
     // <input

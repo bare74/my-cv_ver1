@@ -8,9 +8,9 @@ function CourseDataDisplay(props) {
   const [newCourse, setNewCourse] = useState();
   const [dateCourse, setDateCourse] = useState();
 
-  const DisplayCourse = course.map((info) => {
+  const DisplayCourse = course.map((info, id) => {
     return (
-      <tr>
+      <tr key={id}>
         <td>{info.course}</td>
         <td>{info.year}</td>
       </tr>
@@ -20,11 +20,13 @@ function CourseDataDisplay(props) {
   return (
     <div>
       <table>
-        <tr>
-          <th>Kurs</th>
-          <th>Dato</th>
-        </tr>
-        <tbody>{DisplayCourse}</tbody>
+        <tbody>
+          <tr>
+            <th>Kurs</th>
+            <th>Dato</th>
+          </tr>
+          {DisplayCourse}
+        </tbody>
       </table>
       {adminMode ? (
         <>
@@ -56,7 +58,6 @@ function CourseDataDisplay(props) {
       ) : (
         <></>
       )}
-      <hr />
     </div>
   );
 }

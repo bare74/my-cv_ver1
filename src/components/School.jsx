@@ -9,9 +9,15 @@ function SchoolDataDisplay(props) {
   const [degree, setDegree] = useState();
   const [date, setDate] = useState();
 
-  const DisplaySchool = school.map((info) => {
+  // fetch("http://51.174.192.177:8080/school")
+  //   .then((res) => res.json())
+  //   .then((data) => {
+  //     console.log(data);
+  //   });
+
+  const DisplaySchool = school.map((info, id) => {
     return (
-      <tr>
+      <tr key={id}>
         <td>{info.school}</td>
         <td>{info.degree}</td>
         <td>{info.date}</td>
@@ -22,12 +28,14 @@ function SchoolDataDisplay(props) {
   return (
     <div>
       <table>
-        <tr>
-          <th>Skole</th>
-          <th>Utdanning</th>
-          <th>Dato</th>
-        </tr>
-        <tbody>{DisplaySchool}</tbody>
+        <tbody>
+          <tr>
+            <th>Skole</th>
+            <th>Utdanning</th>
+            <th>Dato</th>
+          </tr>
+          {DisplaySchool}
+        </tbody>
       </table>
       {adminMode ? (
         <>

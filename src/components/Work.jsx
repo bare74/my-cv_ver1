@@ -8,15 +8,14 @@ import PrimaryButton from "./common/PrimaryButton";
 function WorkDataDisplay(props) {
   const { adminMode } = props;
   const [work, setWork] = useState(JsonData.work);
-
   const [newCompany, setNewCompany] = useState();
   const [newTitle, setNewTitle] = useState();
   const [newText, setNewText] = useState();
   const [yearWork, setYearWork] = useState();
 
-  const DisplayWork = work.map((info) => {
+  const DisplayWork = work.map((info, id) => {
     return (
-      <tr>
+      <tr key={id}>
         <td>{info.company}</td>
         <td>{info.title}</td>
         <td>{info.text}</td>
@@ -28,13 +27,15 @@ function WorkDataDisplay(props) {
   return (
     <div>
       <table>
-        <tr>
-          <th>Firma</th>
-          <th>Title</th>
-          <th>Tekst</th>
-          <th>Dato</th>
-        </tr>
-        <tbody>{DisplayWork}</tbody>
+        <tbody>
+          <tr>
+            <th>Firma</th>
+            <th>Title</th>
+            <th>Tekst</th>
+            <th>Dato</th>
+          </tr>
+          {DisplayWork}
+        </tbody>
       </table>
       {adminMode ? (
         <>

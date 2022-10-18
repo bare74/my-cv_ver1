@@ -1,7 +1,11 @@
-.App {
+* {
+  margin: auto;
+}
 
+.container {
+  display: grid;
+  place-items: center;
   text-align: center;
-
 }
 
 .App-logo {
